@@ -1,0 +1,160 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --table-bg: #f8f9fa;
+    --table-header-bg: #e9ecef;
+    --input-bg: #ffffff;
+    --input-border: #ced4da;
+    --calc-bg: #f0f0f0;
+    --total-row-bg: #e0e0e0;
+    --hover-bg: #f8f9fa;
+    --row-even-bg: #ffffff;
+    font-size: 95%;
+}
+
+[data-theme="dark"] {
+    --bg-color: rgb(43,45,49);
+    --text-color: #e0e0e0;
+    --table-bg: rgb(34,36,40);
+    --table-header-bg: rgb(30,32,35);
+    --input-bg: rgb(60,63,65);
+    --input-border: #444;
+    --calc-bg: rgb(50,52,55);
+    --total-row-bg: rgb(60,63,65);
+    --hover-bg: rgb(50,52,55);
+    --row-even-bg: rgb(40,42,45);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 15px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 15px;
+    width: 100%;
+    background-color: var(--table-bg);
+    font-size: 0.95em;
+}
+
+th, td {
+    border: 1px solid var(--input-border);
+    padding: 6px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--table-header-bg);
+    font-size: 0.95em;
+}
+
+input {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+    padding: 3px;
+    transition: all 0.3s;
+    font-size: 0.95em;
+    width: 100%;
+}
+
+input[type="number"] {
+    width: 70px;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus {
+    outline: 2px solid #007acc;
+}
+
+.calc {
+    background-color: var(--calc-bg);
+}
+
+.total-row {
+    background-color: var(--total-row-bg);
+    font-weight: bold;
+}
+
+.theme-toggle {
+    padding: 6px 12px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 10px;
+    font-size: 0.95em;
+}
+
+tr:hover {
+    background-color: var(--hover-bg) !important;
+}
+
+tr:nth-child(even) {
+    background-color: var(--row-even-bg);
+}
+
+#unitsPerDay,
+#loadsPerDay {
+    color: #4ec9b0;
+    font-weight: bold;
+    margin-left: 8px;
+    padding: 2px 4px;
+    font-size: 0.95em;
+}
+
+.controls-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.io-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+#version-indicator {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.8em;
+}
+
+#github {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+#github-icon {
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.2s;
+    fill: var(--text-color);
+}
+
+#github-icon:hover {
+    opacity: 0.8;
+}
